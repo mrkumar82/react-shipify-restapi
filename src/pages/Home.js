@@ -10,10 +10,9 @@ const Home = () => {
 
   useEffect(() => {
     fetchAllProducts();
-  }, []);
+  }, [fetchAllProducts]);
 
   if (!products) return <div>Loading...</div>;
-  const updatedProduct = products.slice(1);
 
   return (
     <>

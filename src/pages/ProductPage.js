@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useShopContext } from '../context/shopContext';
 import {
   Box,
@@ -9,7 +9,6 @@ import {
   Button,
   Heading,
   Flex,
-  Center,
   Container,
 } from '@chakra-ui/react';
 
@@ -20,7 +19,7 @@ const ProductPage = () => {
 
   useEffect(() => {
     fetchProductWithHandle(handle);
-  }, [handle]);
+  }, [handle, fetchProductWithHandle]);
 
   if (!product.title) return <div>Loading...</div>;
 

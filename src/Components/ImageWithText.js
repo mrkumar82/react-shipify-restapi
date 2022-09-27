@@ -1,15 +1,5 @@
 import React from 'react';
-import {
-  Box,
-  Grid,
-  Image,
-  Text,
-  Button,
-  Heading,
-  Flex,
-  Center,
-  Container,
-} from '@chakra-ui/react';
+import { Box, Image, Text, Button, Heading, Flex } from '@chakra-ui/react';
 const ImageWithText = ({ reverse, image, heading, description }) => {
   const reverseSection = reverse ? 'row-reverse' : 'row';
   return (

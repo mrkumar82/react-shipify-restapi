@@ -4,9 +4,7 @@ import ProductPage from './pages/ProductPage';
 import NavBar from './Components/NavBar';
 import Cart from './Components/Cart';
 import NavMenu from './Components/NavMenu';
-import { Container } from '@chakra-ui/react';
 import Footer from './Components/Footer';
-import Hero from './Components/Hero';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
 

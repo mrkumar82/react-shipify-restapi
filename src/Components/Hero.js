@@ -1,15 +1,10 @@
 import React from 'react';
-import { Box, Button, Text, Image, Center } from '@chakra-ui/react';
+import { Box, Button, Text, Image } from '@chakra-ui/react';
 import { useShopContext } from '../context/shopContext';
 import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const { products } = useShopContext();
-
-  //   const bannerProduct = products[0];
-  //   const { images, title, description, handle } = bannerProduct;
-
-  console.log(products[0]?.images[0].src);
 
   return (
     <Box h='70vh' overflow='hidden' position='relative'>
