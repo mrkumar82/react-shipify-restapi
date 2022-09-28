@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 import {
   Grid,
   Box,
@@ -9,6 +9,7 @@ import {
   VStack,
   Flex,
   Container,
+  Link,
 } from '@chakra-ui/react';
 import { FaFacebook, FaTwitter, FaLinkedin } from 'react-icons/fa';
 const Footer = () => {
@@ -27,23 +28,23 @@ const Footer = () => {
             />
           </Flex>
           <VStack p='2rem' alignItems='flex-start'>
-            <Link to='/'>Home</Link>
-            <Link to='/about-us'>About us</Link>
-            <Link to='/contact-us'>Contact us</Link>
+            <RouterLink to='/'>Home</RouterLink>
+            <RouterLink to='/about-us'>About us</RouterLink>
+            <RouterLink to='/contact-us'>Contact us</RouterLink>
           </VStack>
           <Flex p='2rem' alignItems='flex-start'>
             <Box mr='1rem' fontSize='30px'>
-              <Link to='https://www.facebook.com/'>
+              <Link href='https://www.facebook.com/' isExternal>
                 <FaFacebook />
               </Link>
             </Box>
             <Box mr='1rem' fontSize='30px'>
-              <Link to='https://twitter.com/'>
+              <Link href='https://twitter.com/' isExternal>
                 <FaTwitter />
               </Link>
             </Box>
             <Box mr='1rem' fontSize='30px'>
-              <Link to='https://www.linkedin.com/'>
+              <Link href='https://www.linkedin.com/' isExternal>
                 <FaLinkedin />
               </Link>
             </Box>
