@@ -10,7 +10,6 @@ import {
   Button,
   Image,
   Text,
-  Grid,
   Flex,
   Link,
   Box,
@@ -37,23 +36,40 @@ const Cart = () => {
           <DrawerBody>
             {checkout.lineItems?.length ? (
               checkout.lineItems.map((item) => (
-                <Grid templateColumns='repeat(4, 1fr)' gap='1' key={item.id}>
-                  <Flex alignItems='center' justifyContent='center'>
+                <Flex
+                  gap='1'
+                  key={item.id}
+                  mb='20px'
+                  justifyContent='space-between'
+                >
+                  <Flex alignItems='center' justifyContent='center' w='10%'>
                     <CloseIcon
                       cursor='pointer'
                       onClick={() => removeLineItem(item.id)}
                     />
                   </Flex>
-                  <Flex alignItems='center' justifyContent='center'>
-                    <Image src={item.variant.image.src} alt={item.title} />
+                  <Flex alignItems='center' justifyContent='center' w='20%'>
+                    <Image
+                      src={item.variant.image.src}
+                      alt={item.title}
+                      w='100px'
+                    />
                   </Flex>
-                  <Flex alignItems='center' justifyContent='center'>
+                  <Flex alignItems='center' justifyContent='center' w='20%'>
                     <Text>{item.title}</Text>
                   </Flex>
-                  <Flex alignItems='center' justifyContent='center'>
-                    <Text>{item.variant.price}</Text>
+                  <Flex alignItems='center' justifyContent='center' w='10%'>
+                    <Text>{item.quantity}</Text>
                   </Flex>
-                </Grid>
+                  <Flex alignItems='center' justifyContent='center' w='20%'>
+                    <Text textAlign='right'>${item.variant.price}</Text>
+                  </Flex>
+                  <Flex alignItems='center' justifyContent='center' w='10%'>
+                    <Text textAlign='right'>
+                      ${item.variant.price * item.quantity}
+                    </Text>
+                  </Flex>
+                </Flex>
               ))
             ) : (
               <Box w='100%' h='100%'>
@@ -68,6 +84,25 @@ const Cart = () => {
                 </Text>
               </Box>
             )}
+            <Flex
+              justifyContent='space-between'
+              borderTop='solid 1px #999'
+              pt='1rem'
+            >
+              <Box>
+                <Text fontWeight='bold'>Cart Total</Text>
+              </Box>
+              <Box>
+                <Text fontWeight='bold'>
+                  $
+                  {checkout.lineItems?.length
+                    ? checkout.lineItems
+                        .map((item) => item.quantity * item.variant.price)
+                        .reduce((acc, val) => acc + val, 0)
+                    : null}
+                </Text>
+              </Box>
+            </Flex>
           </DrawerBody>
 
           {checkout.lineItems?.length ? (

@@ -10,7 +10,7 @@ const Home = () => {
 
   useEffect(() => {
     fetchAllProducts();
-  }, [fetchAllProducts]);
+  }, []);
 
   if (!products) return <div>Loading...</div>;
 
