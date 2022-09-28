@@ -22,6 +22,7 @@ const ProductPage = () => {
 
   useEffect(() => {
     fetchProductWithHandle(handle);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [handle]);
 
   if (!product.title) return <div>Loading...</div>;
